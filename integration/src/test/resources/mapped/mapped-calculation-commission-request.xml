@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NotificationService xmlns="http://www.vtb24.ru/Services/Hermes/v.1.0">
+    <BillingManager>
+        <CalculateCommission CorrelationID="1">
+            <Request>
+                <InitiatorProcess SystemID="TB" ProcessID="GetNotificationPacketByClient" UserName=""/>
+                <Client GlobalID="" SystemID="91000" Type="000" Number="20014343">
+                    <NotificationPackets>
+                        <NotificationPacket Code="Telebank-sms"/>
+                    </NotificationPackets>
+                </Client>
+            </Request>
+        </CalculateCommission>
+    </BillingManager>
+</NotificationService>

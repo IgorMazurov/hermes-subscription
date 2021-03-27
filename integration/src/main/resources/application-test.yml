@@ -1,0 +1,3 @@
+integration:
+  hermes:
+    mock-enabled: false

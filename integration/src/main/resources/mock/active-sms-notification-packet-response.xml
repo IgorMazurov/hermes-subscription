@@ -1,0 +1,290 @@
+<NotificationService xmlns="http://www.vtb24.ru/Services/Hermes/v.1.0">
+    <SubscriptionManager>
+        <GetNotificationObjects CorrelationID="3eacdf9b-ab0e-4f0f-80c1-1c1aa59c25f4">
+            <Request>
+                <InitiatorProcess SystemID="" ProcessID="" UserName=""/>
+                <Client GlobalID="" SystemID="91000" Type="000" Number="20014343"/>
+            </Request>
+            <Response>
+                <Client ID="112ea1bf-7425-e911-80f3-005056b74abb" LastName="Тихонова" FirstName="Любовь"
+                        MiddleName="Альбертовна" BirthDate="1989-10-15" Account="40817810901004057030"
+                        AccountSystemID="PROF">
+                    <NotificationPackets>
+                        <NotificationPacket Code="BasePacket-sms" Enabled="0" AutoFee="0">
+                            <AllowEvents>
+                                <Event Type="cardexpire" Visible="1"/>
+                                <Event Type="cardovdr" Visible="1"/>
+                                <Event Type="cardsalary" Visible="1"/>
+                                <Event Type="NEWFEEPLAN" Visible="1"/>
+                                <Event Type="ProfileSalary" Visible="1"/>
+                                <Event Type="UnauthOvd" Visible="1"/>
+                            </AllowEvents>
+                            <Subscriptions>
+                                <Subscription ID="2c3917f9-97b0-ea11-80f5-005056b74abb"
+                                              Name="Подписка на SMS-пакет «Базовый»" Encoding="Transliteration"
+                                              ContentType="ShortText" EventPacket="BasePacket" IsLock="1"
+                                              DoRemovePrivateInfo="0">
+                                    <Contact ID="2b3917f9-97b0-ea11-80f5-005056b74abb"/>
+                                    <DeliveredSchema ID="2a3917f9-97b0-ea11-80f5-005056b74abb"/>
+                                    <Events>
+                                        <Event Type="cardexpire"/>
+                                        <Event Type="cardovdr"/>
+                                        <Event Type="cardsalary"/>
+                                        <Event Type="NEWFEEPLAN"/>
+                                    </Events>
+                                </Subscription>
+                                <Subscription ID="5a1cc9c5-7425-e911-80f3-005056b74abb"
+                                              Name="Подписка на SMS-пакет «Базовый»" Encoding="Transliteration"
+                                              ContentType="ShortText" EventPacket="BasePacket" IsLock="1"
+                                              DoRemovePrivateInfo="0">
+                                    <Contact ID="581cc9c5-7425-e911-80f3-005056b74abb"/>
+                                    <DeliveredSchema ID="591cc9c5-7425-e911-80f3-005056b74abb"/>
+                                    <Events>
+                                        <Event Type="cardexpire"/>
+                                        <Event Type="cardovdr"/>
+                                        <Event Type="cardsalary"/>
+                                        <Event Type="NEWFEEPLAN"/>
+                                    </Events>
+                                </Subscription>
+                            </Subscriptions>
+                        </NotificationPacket>
+                        <NotificationPacket Code="Salary-sms" Enabled="0" AutoFee="0">
+                            <AllowEvents>
+                                <Event Type="cardsalary" Visible="1"/>
+                                <Event Type="ProfileSalary" Visible="1"/>
+                            </AllowEvents>
+                            <Subscriptions/>
+                        </NotificationPacket>
+                        <NotificationPacket Code="PlasticCard-sms" Enabled="0" AutoFee="0">
+                            <AllowEvents>
+                                <Event Type="Autopayment" Visible="1"/>
+                                <Event Type="cardauth" Visible="1"/>
+                                <Event Type="cardcredit" Visible="1"/>
+                                <Event Type="carddebit" Visible="1"/>
+                                <Event Type="cardexpire" Visible="1"/>
+                                <Event Type="cardovdr" Visible="1"/>
+                                <Event Type="cardsalary" Visible="1"/>
+                                <Event Type="fundsDeb" Visible="1"/>
+                                <Event Type="NEWFEEPLAN" Visible="1"/>
+                                <Event Type="ProfileSalary" Visible="1"/>
+                                <Event Type="takepay" Visible="1"/>
+                                <Event Type="UnauthOvd" Visible="1"/>
+                            </AllowEvents>
+                            <Subscriptions/>
+                        </NotificationPacket>
+                        <NotificationPacket Code="Telebank-sms" Enabled="1" AutoFee="1">
+                            <AllowEvents>
+                                <Event Type="annulpend" Visible="1"/>
+                                <Event Type="Autopayment" Visible="1"/>
+                                <Event Type="cardauth" Visible="1"/>
+                                <Event Type="cardcredit" Visible="1"/>
+                                <Event Type="carddebit" Visible="1"/>
+                                <Event Type="cardexpire" Visible="1"/>
+                                <Event Type="cardovdr" Visible="1"/>
+                                <Event Type="cardsalary" Visible="1"/>
+                                <Event Type="DepositInfo" Visible="1"/>
+                                <Event Type="endspo" Visible="1"/>
+                                <Event Type="fundsDeb" Visible="1"/>
+                                <Event Type="login" Visible="1"/>
+                                <Event Type="NEWFEEPLAN" Visible="1"/>
+                                <Event Type="procpend" Visible="1"/>
+                                <Event Type="procreq" Visible="1"/>
+                                <Event Type="procspo" Visible="1"/>
+                                <Event Type="ProfileSalary" Visible="1"/>
+                                <Event Type="skipspo" Visible="1"/>
+                                <Event Type="takepay" Visible="1"/>
+                                <Event Type="UnauthOvd" Visible="1"/>
+                            </AllowEvents>
+                            <Subscriptions>
+                                <Subscription ID="26bff410-0caf-ea11-80f5-005056b74abb"
+                                              Name="Подписка на SMS-пакет «Карты+»" Encoding="Transliteration"
+                                              ContentType="ShortText" EventPacket="TelebankEvents" IsLock="1"
+                                              DoRemovePrivateInfo="0">
+                                    <Contact ID="25bff410-0caf-ea11-80f5-005056b74abb"/>
+                                    <DeliveredSchema ID="24bff410-0caf-ea11-80f5-005056b74abb"/>
+                                    <Events>
+                                        <Event Type="annulpend"/>
+                                        <Event Type="Autopayment"/>
+                                        <Event Type="cardauth"/>
+                                        <Event Type="cardcredit"/>
+                                        <Event Type="cardexpire"/>
+                                        <Event Type="cardovdr"/>
+                                        <Event Type="cardsalary"/>
+                                        <Event Type="DepositInfo"/>
+                                        <Event Type="fundsDeb"/>
+                                        <Event Type="login"/>
+                                        <Event Type="NEWFEEPLAN"/>
+                                        <Event Type="ProfileSalary"/>
+                                        <Event Type="takepay"/>
+                                        <Event Type="UnauthOvd"/>
+                                    </Events>
+                                </Subscription>
+                                <Subscription ID="f1cc259a-8cd4-e911-80f4-005056b74abb"
+                                              Name="Подписка на SMS-пакет «Карты+»" Encoding="Transliteration"
+                                              ContentType="ShortText" EventPacket="TelebankEvents" IsLock="0"
+                                              DoRemovePrivateInfo="0">
+                                    <Contact ID="581cc9c5-7425-e911-80f3-005056b74abb"/>
+                                    <DeliveredSchema ID="efcc259a-8cd4-e911-80f4-005056b74abb"/>
+                                    <Events>
+                                        <Event Type="annulpend"/>
+                                        <Event Type="Autopayment"/>
+                                        <Event Type="cardauth"/>
+                                        <Event Type="cardcredit"/>
+                                        <Event Type="carddebit"/>
+                                        <Event Type="cardexpire"/>
+                                        <Event Type="cardovdr"/>
+                                        <Event Type="cardsalary"/>
+                                        <Event Type="DepositInfo"/>
+                                        <Event Type="endspo"/>
+                                        <Event Type="fundsDeb"/>
+                                        <Event Type="login"/>
+                                        <Event Type="NEWFEEPLAN"/>
+                                        <Event Type="procpend"/>
+                                        <Event Type="procreq"/>
+                                        <Event Type="procspo"/>
+                                        <Event Type="ProfileSalary"/>
+                                        <Event Type="skipspo"/>
+                                        <Event Type="takepay"/>
+                                        <Event Type="UnauthOvd"/>
+                                    </Events>
+                                </Subscription>
+                            </Subscriptions>
+                        </NotificationPacket>
+                        <NotificationPacket Code="Telebank-smtp" Enabled="0" AutoFee="0">
+                            <AllowEvents>
+                                <Event Type="annulpend" Visible="1"/>
+                                <Event Type="Autopayment" Visible="1"/>
+                                <Event Type="cardauth" Visible="1"/>
+                                <Event Type="cardcredit" Visible="1"/>
+                                <Event Type="carddebit" Visible="1"/>
+                                <Event Type="cardexpire" Visible="1"/>
+                                <Event Type="cardovdr" Visible="1"/>
+                                <Event Type="crossrates" Visible="1"/>
+                                <Event Type="DepositInfo" Visible="1"/>
+                                <Event Type="endspo" Visible="1"/>
+                                <Event Type="fundsDeb" Visible="1"/>
+                                <Event Type="login" Visible="1"/>
+                                <Event Type="NEWFEEPLAN" Visible="1"/>
+                                <Event Type="procpend" Visible="1"/>
+                                <Event Type="procreq" Visible="1"/>
+                                <Event Type="procspo" Visible="1"/>
+                                <Event Type="ProfileSalary" Visible="1"/>
+                                <Event Type="rates" Visible="1"/>
+                                <Event Type="skipspo" Visible="1"/>
+                                <Event Type="takepay" Visible="1"/>
+                                <Event Type="tbreview" Visible="1"/>
+                                <Event Type="UnauthOvd" Visible="1"/>
+                            </AllowEvents>
+                            <Subscriptions>
+                                <Subscription ID="3125f4db-0aaf-ea11-80f5-005056b74abb"
+                                              Name="Подписка на E-mail-пакет «Карты+»" Encoding="UTF-8"
+                                              ContentType="SmtpHtml" EventPacket="TelebankEvents" IsLock="1"
+                                              DoRemovePrivateInfo="0">
+                                    <Contact ID="3025f4db-0aaf-ea11-80f5-005056b74abb"/>
+                                    <DeliveredSchema ID="2f25f4db-0aaf-ea11-80f5-005056b74abb"/>
+                                    <Events>
+                                        <Event Type="annulpend"/>
+                                        <Event Type="Autopayment"/>
+                                        <Event Type="cardauth"/>
+                                        <Event Type="cardcredit"/>
+                                        <Event Type="carddebit"/>
+                                        <Event Type="cardexpire"/>
+                                        <Event Type="cardovdr"/>
+                                        <Event Type="crossrates"/>
+                                        <Event Type="DepositInfo"/>
+                                        <Event Type="endspo"/>
+                                        <Event Type="fundsDeb"/>
+                                        <Event Type="login"/>
+                                        <Event Type="NEWFEEPLAN"/>
+                                        <Event Type="procpend"/>
+                                        <Event Type="procreq"/>
+                                        <Event Type="procspo"/>
+                                        <Event Type="ProfileSalary"/>
+                                        <Event Type="rates"/>
+                                        <Event Type="skipspo"/>
+                                        <Event Type="takepay"/>
+                                        <Event Type="tbreview"/>
+                                        <Event Type="UnauthOvd"/>
+                                    </Events>
+                                </Subscription>
+                            </Subscriptions>
+                        </NotificationPacket>
+                    </NotificationPackets>
+                    <Contacts>
+                        <Contact ID="f0cc259a-8cd4-e911-80f4-005056b74abb" Name="" Channel="sms" IsEnable="1">
+                            <Address>
+                                <SMS>
+                                    <Provider></Provider>
+                                    <PhoneNumber>9147892323</PhoneNumber>
+                                </SMS>
+                            </Address>
+                        </Contact>
+                        <Contact ID="3025f4db-0aaf-ea11-80f5-005056b74abb" Name="" Channel="smtp" IsEnable="1">
+                            <Address>
+                                <Smtp>
+                                    <Mailto>viktor2000@mail.ru</Mailto>
+                                </Smtp>
+                            </Address>
+                        </Contact>
+                        <Contact ID="25bff410-0caf-ea11-80f5-005056b74abb" Name="" Channel="sms" IsEnable="1">
+                            <Address>
+                                <SMS>
+                                    <Provider></Provider>
+                                    <PhoneNumber>9141112323</PhoneNumber>
+                                </SMS>
+                            </Address>
+                        </Contact>
+                        <Contact ID="2b3917f9-97b0-ea11-80f5-005056b74abb" Name="" Channel="sms" IsEnable="1">
+                            <Address>
+                                <SMS>
+                                    <Provider></Provider>
+                                    <PhoneNumber>9111111111</PhoneNumber>
+                                </SMS>
+                            </Address>
+                        </Contact>
+                        <Contact ID="581cc9c5-7425-e911-80f3-005056b74abb" Name="9852222222" Channel="sms" IsEnable="1">
+                            <Address>
+                                <SMS>
+                                    <Provider></Provider>
+                                    <PhoneNumber>9147892323</PhoneNumber>
+                                </SMS>
+                            </Address>
+                        </Contact>
+                    </Contacts>
+                    <DeliveredSchemas>
+                        <DeliveredSchema ID="591CC9C5-7425-E911-80F3-005056B74ABB" Name="Круглосуточно" GMT="3"
+                                         IsDefault="0">
+                            <Scheduling>
+                                <Interval Type="Daily" BegPoint="3" EndPoint="24"/>
+                            </Scheduling>
+                        </DeliveredSchema>
+                        <DeliveredSchema ID="EFCC259A-8CD4-E911-80F4-005056B74ABB" Name="Круглосуточно" GMT="4"
+                                         IsDefault="0">
+                            <Scheduling>
+                                <Interval Type="Holidays" BegPoint="0" EndPoint="24"/>
+                            </Scheduling>
+                        </DeliveredSchema>
+                        <DeliveredSchema ID="2F25F4DB-0AAF-EA11-80F5-005056B74ABB" Name="Круглосуточно" GMT="3"
+                                         IsDefault="0">
+                            <Scheduling>
+                                <Interval Type="Daily" BegPoint="20" EndPoint="24"/>
+                            </Scheduling>
+                        </DeliveredSchema>
+                        <DeliveredSchema ID="24BFF410-0CAF-EA11-80F5-005056B74ABB" Name="Круглосуточно" GMT="3"
+                                         IsDefault="0">
+                            <Scheduling>
+                                <Interval Type="Holidays" BegPoint="1" EndPoint="4"/>
+                            </Scheduling>
+                        </DeliveredSchema>
+                        <DeliveredSchema ID="2A3917F9-97B0-EA11-80F5-005056B74ABB" Name="Круглосуточно" GMT="3"
+                                         IsDefault="0">
+                            <Scheduling>
+                                <Interval Type="Daily" BegPoint="3" EndPoint="24"/>
+                            </Scheduling>
+                        </DeliveredSchema>
+                    </DeliveredSchemas>
+                </Client>
+            </Response>
+        </GetNotificationObjects>
+    </SubscriptionManager>
+</NotificationService>

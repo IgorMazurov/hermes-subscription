@@ -1,0 +1,209 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: ${NAME}
+annotations:
+  description: Template for ${NAME}
+labels:
+  app: ${NAME}
+objects:
+  - kind: DeploymentConfig
+    apiVersion: v1
+    metadata:
+      labels:
+        app: ${NAME}
+      name: ${NAME}
+    spec:
+      replicas: ${{REPLICAS}}
+      revisionHistoryLimit: 10
+      selector:
+        app: ${NAME}
+        deploymentconfig: ${NAME}
+      strategy:
+        activeDeadlineSeconds: 21600
+        resources: {}
+        rollingParams:
+          intervalSeconds: 1
+          maxSurge: 25%
+          maxUnavailable: 25%
+          timeoutSeconds: 600
+          updatePeriodSeconds: 1
+        type: Rolling
+      template:
+        metadata:
+          labels:
+            app: ${NAME}
+            deploymentconfig: ${NAME}
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: Europe/Moscow
+              image: ${REGISTRY_URL}/${IMAGE}:${VERSION}
+              imagePullPolicy: Always
+              name: ${NAME}
+              ports:
+                - containerPort: ${{TARGET_PORT}}
+                  protocol: TCP
+              livenessProbe:
+                failureThreshold: 13
+                httpGet:
+                  path: /actuator/health
+                  port: ${{TARGET_PORT}}
+                  scheme: HTTP
+                initialDelaySeconds: 210
+                periodSeconds: 10
+                successThreshold: 1
+                timeoutSeconds: 15
+              readinessProbe:
+                failureThreshold: 5
+                httpGet:
+                  path: /actuator/health
+                  port: ${{TARGET_PORT}}
+                  scheme: HTTP
+                initialDelaySeconds: 180
+                periodSeconds: 10
+                successThreshold: 1
+                timeoutSeconds: 15
+              resources:
+                limits:
+                  cpu: ${{CPU_LIMIT}}
+                  memory: ${{MEMORY_LIMIT}}
+                requests:
+                  cpu: ${{CPU_REQ}}
+                  memory: ${{MEMORY_REQ}}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              envFrom:
+                - configMapRef:
+                    name: ${NAME}
+          dnsConfig:
+            options:
+              - name: single-request
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+      test: false
+      triggers:
+        - type: ConfigChange
+        - type: ImageChange
+          imageChangeParams:
+            automatic: true
+            containerNames:
+              - ${NAME}
+            from:
+              kind: ImageStreamTag
+              name: '${NAME}:${VERSION}'
+
+  - kind: ImageStream
+    apiVersion: image.openshift.io/v1
+    metadata:
+      labels:
+        app: ${NAME}
+      name: ${NAME}
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - from:
+            kind: DockerImage
+            name: ${REGISTRY_URL}/${IMAGE}:${VERSION}
+          importPolicy:
+            insecure: true
+          name: ${VERSION}
+          referencePolicy:
+            type: Source
+
+  - kind: Service
+    apiVersion: v1
+    metadata:
+      name: ${NAME}
+    labels:
+      app: ${NAME}
+      name: ${NAME}
+    spec:
+      ports:
+        - name: ${PORT}-tcp
+          port: ${{PORT}}
+          protocol: TCP
+          targetPort: ${{TARGET_PORT}}
+      selector:
+        app: ${NAME}
+        deploymentconfig: ${NAME}
+      sessionAffinity: None
+      type: ClusterIP
+    status:
+      loadBalancer: {}
+
+  - kind: Route
+    apiVersion: v1
+    metadata:
+      annotations:
+        haproxy.router.openshift.io/timeout: 360s
+      name: ${NAME}
+    labels:
+      app: ${NAME}
+      name: ${NAME}
+    spec:
+      host: ${HOST}
+      port:
+        targetPort: ${TARGET_PORT}-tcp
+      tls:
+        termination: edge
+        insecureEdgeTerminationPolicy: Allow
+      to:
+        kind: Service
+        name: ${NAME}
+        weight: 100
+      wildcardPolicy: None
+parameters:
+  - name: REGISTRY_URL
+    description: Адрес docker registry
+    required: true
+  - description: Host for the application
+    displayName: Host
+    name: HOST
+    required: true
+  - description: Port for the application
+    displayName: Port
+    name: PORT
+    required: true
+  - description: Target Port for the application
+    displayName: Target port
+    name: TARGET_PORT
+    required: true
+  - description: Version of the application
+    displayName: Version
+    name: VERSION
+    required: true
+    value: latest
+  - description: NAME of the application
+    displayName: NAME
+    name: NAME
+    required: true
+  - description: IMAGE of the application
+    displayName: IMAGE
+    name: IMAGE
+    required: true
+  - description:  CPU limit
+    displayName: CPU_LIMIT
+    name: CPU_LIMIT
+    required: true
+  - description: memory limit
+    displayName: MEMORY_LIMIT
+    name: MEMORY_LIMIT
+    required: true
+  - description: cpu requests
+    displayName: CPU__REQ
+    name: CPU_REQ
+    required: true
+  - description:  memory requests
+    displayName: MEMORY_REQ
+    name: MEMORY_REQ
+    required: true
+  - description:  number of replicas
+    displayName: REPLICAS
+    name: REPLICAS
+    required: true

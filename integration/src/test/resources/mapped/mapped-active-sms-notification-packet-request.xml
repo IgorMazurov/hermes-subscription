@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<NotificationService xmlns="http://www.vtb24.ru/Services/Hermes/v.1.0">
+    <SubscriptionManager>
+        <GetNotificationObjects CorrelationID="1">
+            <Request>
+                <InitiatorProcess UserName="" ProcessID="" SystemID="TB"/>
+                <Client SystemID="95000" Number="112EA1BF-7425-E911-80F3-005056B74ABB" Type="000" GlobalID=""/>
+            </Request>
+        </GetNotificationObjects>
+    </SubscriptionManager>
+</NotificationService>

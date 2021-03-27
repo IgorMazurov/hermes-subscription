@@ -1,0 +1,14 @@
+{
+  "client": {
+    "notificationPackets": [
+      "Telebank-sms"
+    ],
+    "number": "20014343",
+    "systemId": "91000",
+    "type": "000"
+  },
+  "initiatorProcess": {
+    "processId": "GetNotificationPacketByClient",
+    "systemId": "TB"
+  }
+}

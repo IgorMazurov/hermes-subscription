@@ -1,0 +1,48 @@
+include:
+  - project: big/devops
+    ref: refactor
+    file: .generic-ci.yml
+
+variables:
+  APP_NAME: integration-hermes-subscription
+  MAVEN_GOALS: "clean package"
+  MAVEN_SETTINGS: settings-nexus.xml
+  NEXUS_MAVEN_PUSH: http://nexus.corp.dev.vtb/repository/maven-msa/
+  MAVEN_CLI_OPTS: "-DaltDeploymentRepository=nexus::default::${NEXUS_MAVEN_PUSH}"
+  DOCKER_CONTEXT: integration
+  ZIP_SRC: "Templates/ Docs/"
+  OS4: 'true'
+
+Build maven:
+  extends: ..Build maven
+
+Build:mvnMR:
+  extends: ..Build:mvnMR
+  variables:
+    MAVEN_CUSTOM_GOALS: "clean test"
+
+Push docker image to Nexus:
+  extends: ..Push docker image to Nexus
+
+Build:deploy:
+  extends: ..Build:mvndeploy
+
+Deploy DSO:
+  extends: ..Deploy DSO
+
+Approve--autodeploy:
+  extends:
+    - ..Approve--auto--deploy
+
+Docker push version:
+  extends: ..Docker push version
+
+Auto--deploy--zip:
+  extends:
+    - ..Auto--deploy--zip
+
+Send e-mail to UViT:
+  extends:
+    - ..Send e-mail to UViT
+  variables:
+    CC: "vsirotkin@vtb.ru vdsirotkin@dev.vtb GorbovLS@vtb.ru dsoldatov@vtb.ru avbaharev@dev.vtb oshkina@vtb.ru avtyapkin@vtb.ru"

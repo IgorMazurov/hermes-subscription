@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>./.m2/repo</localRepository>
+    <mirrors>
+        <mirror>
+            <id>central</id>
+            <mirrorOf>*</mirrorOf>
+            <name>central</name>
+            <url>http://nexus.corp.dev.vtb/repository/maven-public/</url>
+        </mirror>
+    </mirrors>
+    <servers>
+        <server>
+            <id>nexus</id>
+            <username>${env.NEXUS_USER}</username>
+            <password>${env.NEXUS_PASS}</password>
+        </server>
+    </servers>
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+        <groupId>com.fortify.ps.maven.plugin</groupId>
+    </pluginGroups>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>
+                    http://10.203.92.102
+                </sonar.host.url>
+            </properties>
+        </profile>
+    </profiles>
+</settings>

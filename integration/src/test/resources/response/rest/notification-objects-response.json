@@ -1,0 +1,556 @@
+{
+  "client": {
+    "notificationPackets": [
+      {
+        "allowEvents": [
+          {
+            "type": "cardexpire",
+            "visible": 1
+          },
+          {
+            "type": "cardovdr",
+            "visible": 1
+          },
+          {
+            "type": "cardsalary",
+            "visible": 1
+          },
+          {
+            "type": "NEWFEEPLAN",
+            "visible": 1
+          },
+          {
+            "type": "ProfileSalary",
+            "visible": 1
+          },
+          {
+            "type": "UnauthOvd",
+            "visible": 1
+          }
+        ],
+        "subscriptions": [
+          {
+            "contact": "2b3917f9-97b0-ea11-80f5-005056b74abb",
+            "deliveredSchema": "2a3917f9-97b0-ea11-80f5-005056b74abb",
+            "events": [
+              "cardexpire",
+              "cardovdr",
+              "cardsalary",
+              "NEWFEEPLAN"
+            ],
+            "id": "2c3917f9-97b0-ea11-80f5-005056b74abb",
+            "name": "Подписка на SMS-пакет «Базовый»",
+            "doRemovePrivateInfo": 0,
+            "encoding": "Transliteration",
+            "contentType": "ShortText",
+            "eventPacket": "BasePacket"
+          },
+          {
+            "contact": "581cc9c5-7425-e911-80f3-005056b74abb",
+            "deliveredSchema": "591cc9c5-7425-e911-80f3-005056b74abb",
+            "events": [
+              "cardexpire",
+              "cardovdr",
+              "cardsalary",
+              "NEWFEEPLAN"
+            ],
+            "id": "5a1cc9c5-7425-e911-80f3-005056b74abb",
+            "name": "Подписка на SMS-пакет «Базовый»",
+            "doRemovePrivateInfo": 0,
+            "encoding": "Transliteration",
+            "contentType": "ShortText",
+            "eventPacket": "BasePacket"
+          }
+        ],
+        "code": "BasePacket-sms",
+        "enabled": 0,
+        "autoFee": 0
+      },
+      {
+        "allowEvents": [
+          {
+            "type": "cardsalary",
+            "visible": 1
+          },
+          {
+            "type": "ProfileSalary",
+            "visible": 1
+          }
+        ],
+        "subscriptions": [],
+        "code": "Salary-sms",
+        "enabled": 0,
+        "autoFee": 0
+      },
+      {
+        "allowEvents": [
+          {
+            "type": "Autopayment",
+            "visible": 1
+          },
+          {
+            "type": "cardauth",
+            "visible": 1
+          },
+          {
+            "type": "cardcredit",
+            "visible": 1
+          },
+          {
+            "type": "carddebit",
+            "visible": 1
+          },
+          {
+            "type": "cardexpire",
+            "visible": 1
+          },
+          {
+            "type": "cardovdr",
+            "visible": 1
+          },
+          {
+            "type": "cardsalary",
+            "visible": 1
+          },
+          {
+            "type": "fundsDeb",
+            "visible": 1
+          },
+          {
+            "type": "NEWFEEPLAN",
+            "visible": 1
+          },
+          {
+            "type": "ProfileSalary",
+            "visible": 1
+          },
+          {
+            "type": "takepay",
+            "visible": 1
+          },
+          {
+            "type": "UnauthOvd",
+            "visible": 1
+          }
+        ],
+        "subscriptions": [],
+        "code": "PlasticCard-sms",
+        "enabled": 0,
+        "autoFee": 0
+      },
+      {
+        "allowEvents": [
+          {
+            "type": "annulpend",
+            "visible": 1
+          },
+          {
+            "type": "Autopayment",
+            "visible": 1
+          },
+          {
+            "type": "cardauth",
+            "visible": 1
+          },
+          {
+            "type": "cardcredit",
+            "visible": 1
+          },
+          {
+            "type": "carddebit",
+            "visible": 1
+          },
+          {
+            "type": "cardexpire",
+            "visible": 1
+          },
+          {
+            "type": "cardovdr",
+            "visible": 1
+          },
+          {
+            "type": "cardsalary",
+            "visible": 1
+          },
+          {
+            "type": "DepositInfo",
+            "visible": 1
+          },
+          {
+            "type": "endspo",
+            "visible": 1
+          },
+          {
+            "type": "fundsDeb",
+            "visible": 1
+          },
+          {
+            "type": "login",
+            "visible": 1
+          },
+          {
+            "type": "NEWFEEPLAN",
+            "visible": 1
+          },
+          {
+            "type": "procpend",
+            "visible": 1
+          },
+          {
+            "type": "procreq",
+            "visible": 1
+          },
+          {
+            "type": "procspo",
+            "visible": 1
+          },
+          {
+            "type": "ProfileSalary",
+            "visible": 1
+          },
+          {
+            "type": "skipspo",
+            "visible": 1
+          },
+          {
+            "type": "takepay",
+            "visible": 1
+          },
+          {
+            "type": "UnauthOvd",
+            "visible": 1
+          }
+        ],
+        "subscriptions": [
+          {
+            "contact": "25bff410-0caf-ea11-80f5-005056b74abb",
+            "deliveredSchema": "24bff410-0caf-ea11-80f5-005056b74abb",
+            "events": [
+              "annulpend",
+              "Autopayment",
+              "cardauth",
+              "cardcredit",
+              "cardexpire",
+              "cardovdr",
+              "cardsalary",
+              "DepositInfo",
+              "fundsDeb",
+              "login",
+              "NEWFEEPLAN",
+              "ProfileSalary",
+              "takepay",
+              "UnauthOvd"
+            ],
+            "id": "26bff410-0caf-ea11-80f5-005056b74abb",
+            "name": "Подписка на SMS-пакет «Карты+»",
+            "doRemovePrivateInfo": 0,
+            "encoding": "Transliteration",
+            "contentType": "ShortText",
+            "eventPacket": "TelebankEvents"
+          },
+          {
+            "contact": "581cc9c5-7425-e911-80f3-005056b74abb",
+            "deliveredSchema": "efcc259a-8cd4-e911-80f4-005056b74abb",
+            "events": [
+              "annulpend",
+              "Autopayment",
+              "cardauth",
+              "cardcredit",
+              "carddebit",
+              "cardexpire",
+              "cardovdr",
+              "cardsalary",
+              "DepositInfo",
+              "endspo",
+              "fundsDeb",
+              "login",
+              "NEWFEEPLAN",
+              "procpend",
+              "procreq",
+              "procspo",
+              "ProfileSalary",
+              "skipspo",
+              "takepay",
+              "UnauthOvd"
+            ],
+            "id": "f1cc259a-8cd4-e911-80f4-005056b74abb",
+            "name": "Подписка на SMS-пакет «Карты+»",
+            "doRemovePrivateInfo": 0,
+            "encoding": "Transliteration",
+            "contentType": "ShortText",
+            "eventPacket": "TelebankEvents"
+          }
+        ],
+        "code": "Telebank-sms",
+        "enabled": 1,
+        "autoFee": 1
+      },
+      {
+        "allowEvents": [
+          {
+            "type": "annulpend",
+            "visible": 1
+          },
+          {
+            "type": "Autopayment",
+            "visible": 1
+          },
+          {
+            "type": "cardauth",
+            "visible": 1
+          },
+          {
+            "type": "cardcredit",
+            "visible": 1
+          },
+          {
+            "type": "carddebit",
+            "visible": 1
+          },
+          {
+            "type": "cardexpire",
+            "visible": 1
+          },
+          {
+            "type": "cardovdr",
+            "visible": 1
+          },
+          {
+            "type": "crossrates",
+            "visible": 1
+          },
+          {
+            "type": "DepositInfo",
+            "visible": 1
+          },
+          {
+            "type": "endspo",
+            "visible": 1
+          },
+          {
+            "type": "fundsDeb",
+            "visible": 1
+          },
+          {
+            "type": "login",
+            "visible": 1
+          },
+          {
+            "type": "NEWFEEPLAN",
+            "visible": 1
+          },
+          {
+            "type": "procpend",
+            "visible": 1
+          },
+          {
+            "type": "procreq",
+            "visible": 1
+          },
+          {
+            "type": "procspo",
+            "visible": 1
+          },
+          {
+            "type": "ProfileSalary",
+            "visible": 1
+          },
+          {
+            "type": "rates",
+            "visible": 1
+          },
+          {
+            "type": "skipspo",
+            "visible": 1
+          },
+          {
+            "type": "takepay",
+            "visible": 1
+          },
+          {
+            "type": "tbreview",
+            "visible": 1
+          },
+          {
+            "type": "UnauthOvd",
+            "visible": 1
+          }
+        ],
+        "subscriptions": [
+          {
+            "contact": "3025f4db-0aaf-ea11-80f5-005056b74abb",
+            "deliveredSchema": "2f25f4db-0aaf-ea11-80f5-005056b74abb",
+            "events": [
+              "annulpend",
+              "Autopayment",
+              "cardauth",
+              "cardcredit",
+              "carddebit",
+              "cardexpire",
+              "cardovdr",
+              "crossrates",
+              "DepositInfo",
+              "endspo",
+              "fundsDeb",
+              "login",
+              "NEWFEEPLAN",
+              "procpend",
+              "procreq",
+              "procspo",
+              "ProfileSalary",
+              "rates",
+              "skipspo",
+              "takepay",
+              "tbreview",
+              "UnauthOvd"
+            ],
+            "id": "3125f4db-0aaf-ea11-80f5-005056b74abb",
+            "name": "Подписка на E-mail-пакет «Карты+»",
+            "doRemovePrivateInfo": 0,
+            "encoding": "UTF-8",
+            "contentType": "SmtpHtml",
+            "eventPacket": "TelebankEvents"
+          }
+        ],
+        "code": "Telebank-smtp",
+        "enabled": 0,
+        "autoFee": 0
+      }
+    ],
+    "contacts": [
+      {
+        "address": {
+          "sms": {
+            "provider": "",
+            "phoneNumber": 9147892323
+          }
+        },
+        "id": "f0cc259a-8cd4-e911-80f4-005056b74abb",
+        "name": "",
+        "channel": "sms"
+      },
+      {
+        "address": {
+          "smtp": {
+            "mailto": "viktor2000@mail.ru"
+          }
+        },
+        "id": "3025f4db-0aaf-ea11-80f5-005056b74abb",
+        "name": "",
+        "channel": "smtp"
+      },
+      {
+        "address": {
+          "sms": {
+            "provider": "",
+            "phoneNumber": 9141112323
+          }
+        },
+        "id": "25bff410-0caf-ea11-80f5-005056b74abb",
+        "name": "",
+        "channel": "sms"
+      },
+      {
+        "address": {
+          "sms": {
+            "provider": "",
+            "phoneNumber": 9111111111
+          }
+        },
+        "id": "2b3917f9-97b0-ea11-80f5-005056b74abb",
+        "name": "",
+        "channel": "sms"
+      },
+      {
+        "address": {
+          "sms": {
+            "provider": "",
+            "phoneNumber": 9147892323
+          }
+        },
+        "id": "581cc9c5-7425-e911-80f3-005056b74abb",
+        "name": "9852222222",
+        "channel": "sms"
+      }
+    ],
+    "deliveredSchemas": [
+      {
+        "scheduling": {
+          "intervals": [
+            {
+              "type": "Daily",
+              "begPoint": 3,
+              "endPoint": 24
+            }
+          ]
+        },
+        "id": "591CC9C5-7425-E911-80F3-005056B74ABB",
+        "name": "Круглосуточно",
+        "gmt": 3
+      },
+      {
+        "scheduling": {
+          "intervals": [
+            {
+              "type": "Holidays",
+              "begPoint": 0,
+              "endPoint": 24
+            }
+          ]
+        },
+        "id": "EFCC259A-8CD4-E911-80F4-005056B74ABB",
+        "name": "Круглосуточно",
+        "gmt": 4
+      },
+      {
+        "scheduling": {
+          "intervals": [
+            {
+              "type": "Daily",
+              "begPoint": 20,
+              "endPoint": 24
+            }
+          ]
+        },
+        "id": "2F25F4DB-0AAF-EA11-80F5-005056B74ABB",
+        "name": "Круглосуточно",
+        "gmt": 3
+      },
+      {
+        "scheduling": {
+          "intervals": [
+            {
+              "type": "Holidays",
+              "begPoint": 1,
+              "endPoint": 4
+            }
+          ]
+        },
+        "id": "24BFF410-0CAF-EA11-80F5-005056B74ABB",
+        "name": "Круглосуточно",
+        "gmt": 3
+      },
+      {
+        "scheduling": {
+          "intervals": [
+            {
+              "type": "Daily",
+              "begPoint": 3,
+              "endPoint": 24
+            }
+          ]
+        },
+        "id": "2A3917F9-97B0-EA11-80F5-005056B74ABB",
+        "name": "Круглосуточно",
+        "gmt": 3
+      }
+    ],
+    "id": "112ea1bf-7425-e911-80f3-005056b74abb",
+    "lastName": "Тихонова",
+    "firstName": "Любовь",
+    "middleName": "Альбертовна",
+    "birthDate": "1989-10-15",
+    "account": 40817810901004057030,
+    "accountSystemId": "PROF"
+  }
+}

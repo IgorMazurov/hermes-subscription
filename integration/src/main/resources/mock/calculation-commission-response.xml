@@ -1,0 +1,20 @@
+<NotificationService xmlns="http://www.vtb24.ru/Services/Hermes/v.1.0">
+    <BillingManager>
+        <CalculateCommission CorrelationID="2e4ea3cd-3392-4d9f-824e-c84da15381e3">
+            <Request>
+                <InitiatorProcess SystemID="TB" ProcessID="GetNotificationPacketByClient" UserName=""/>
+                <Client GlobalID="" SystemID="91000" Type="000" Number="20014343">
+                    <NotificationPackets>
+                        <NotificationPacket Code="Telebank-sms"/>
+                    </NotificationPackets>
+                </Client>
+            </Request>
+            <Response>
+                <NotificationPackets>
+                    <NotificationPacket Code="Telebank-sms" EnableKBO="725004-00" ProlongKBO="725004-03"
+                                        ProlongCost="59" AutoFeeDate="2020-09-14T15:46:52.737"/>
+                </NotificationPackets>
+            </Response>
+        </CalculateCommission>
+    </BillingManager>
+</NotificationService>

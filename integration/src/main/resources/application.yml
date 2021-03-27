@@ -1,0 +1,28 @@
+integration:
+  hermes:
+    soap-connection-timeout: 10s
+    soap-read-timeout: 10s
+    hermes-notification-url: http://k3-hermes-app.msk.vtb24.ru/Hermes/Services
+    subscription-local-part: /SubscriptionManager/POX
+    calculation-local-part: /BillingManager/POX
+    mock-enabled: true
+
+logging:
+  level:
+    ru.vtb.msa: debug
+
+msa:
+  fluentd:
+    enabled: false
+    tag: ${spring.application.name}
+  mdc-logging:
+    filtered-patterns:
+      - /v3/api-docs
+
+spring:
+  application:
+    name: integration-hermes-subscription
+  profiles:
+    active: ${SPRING_ACTIVE_PROFILE}
+  jackson:
+    default-property-inclusion: non_null

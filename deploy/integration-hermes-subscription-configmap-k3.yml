@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  FLUENTD_HOST: integration-logs-collector.k3-integration.svc.cluster.local
+  FLUENTD_PORT: '24224'
+  APP_LOGGING_LEVEL: DEBUG
+  SOAP_CONNECTION_TIMEOUT: 15s
+  SOAP_READ_TIMEOUT: 15s
+  HERMES_NOTIFICATION_ENDPOINT_URL: http://k3-hermes-app.msk.vtb24.ru/Hermes/Services
+  SERVICE_MOCK_ENABLED: 'false'
+  SPRING_ACTIVE_PROFILE: openshift
+kind: ConfigMap
+metadata:
+  name: integration-hermes-subscription
+  namespace: k3-integration

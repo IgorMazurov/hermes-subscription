@@ -1,0 +1,11 @@
+{
+  "notificationPackets": [
+    {
+      "code": "Telebank-sms",
+      "autoFeeDate": "2020-09-14T15:46:52.737",
+      "prolongCost": 59,
+      "enableKBO": "725004-00",
+      "prolongKBO": "725004-03"
+    }
+  ]
+}

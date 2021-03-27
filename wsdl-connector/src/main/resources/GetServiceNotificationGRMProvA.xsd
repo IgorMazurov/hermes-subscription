@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.vtb24.ru/Services/Hermes/v.1.0"
+            targetNamespace="http://www.vtb24.ru/Services/Hermes/v.1.0"
+            elementFormDefault="qualified">
+    <xsd:element name="NotificationService">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="SubscriptionManager">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="GetNotificationObjects">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Request" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="InitiatorProcess">
+                                                        <xsd:complexType>
+                                                            <xsd:attribute name="SystemID" type="xsd:string"/>
+                                                            <xsd:attribute name="ProcessID"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="UserName" type="xsd:string"/>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="Client">
+                                                        <xsd:complexType>
+                                                            <xsd:attribute name="GlobalID" type="xsd:string"/>
+                                                            <xsd:attribute name="SystemID" type="xsd:string"/>
+                                                            <xsd:attribute name="Type" type="xsd:string"/>
+                                                            <xsd:attribute name="Number" type="xsd:string"/>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="Response"
+                                                     minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="Client" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="NotificationPackets">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="NotificationPacket"
+                                                                                         maxOccurs="unbounded"
+                                                                                         minOccurs="0">
+                                                                                <xsd:complexType>
+                                                                                    <xsd:sequence>
+                                                                                        <xsd:element name="AllowEvents">
+                                                                                            <xsd:complexType>
+                                                                                                <xsd:sequence>
+                                                                                                    <xsd:element
+                                                                                                            name="Event"
+                                                                                                            minOccurs="0"
+                                                                                                            maxOccurs="unbounded">
+                                                                                                        <xsd:complexType>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="Type"
+                                                                                                                    type="xsd:string"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="Visible"
+                                                                                                                    type="xsd:integer"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="Group"
+                                                                                                                    type="xsd:integer"/>
+                                                                                                        </xsd:complexType>
+                                                                                                    </xsd:element>
+                                                                                                </xsd:sequence>
+                                                                                            </xsd:complexType>
+                                                                                        </xsd:element>
+                                                                                        <xsd:element
+                                                                                                name="Subscriptions">
+                                                                                            <xsd:complexType>
+                                                                                                <xsd:sequence>
+                                                                                                    <xsd:element
+                                                                                                            name="Subscription"
+                                                                                                            maxOccurs="unbounded"
+                                                                                                            minOccurs="0">
+                                                                                                        <xsd:complexType>
+                                                                                                            <xsd:sequence>
+                                                                                                                <xsd:element
+                                                                                                                        name="Contact">
+                                                                                                                    <xsd:complexType>
+                                                                                                                        <xsd:attribute
+                                                                                                                                name="ID"
+                                                                                                                                type="xsd:string"/>
+                                                                                                                    </xsd:complexType>
+                                                                                                                </xsd:element>
+                                                                                                                <xsd:element
+                                                                                                                        name="DeliveredSchema">
+                                                                                                                    <xsd:complexType>
+                                                                                                                        <xsd:attribute
+                                                                                                                                name="ID"
+                                                                                                                                type="xsd:string"/>
+                                                                                                                    </xsd:complexType>
+                                                                                                                </xsd:element>
+                                                                                                                <xsd:element
+                                                                                                                        name="Events">
+                                                                                                                    <xsd:complexType>
+                                                                                                                        <xsd:sequence>
+                                                                                                                            <xsd:element
+                                                                                                                                    name="Event"
+                                                                                                                                    maxOccurs="unbounded"
+                                                                                                                                    minOccurs="0">
+                                                                                                                                <xsd:complexType>
+                                                                                                                                    <xsd:attribute
+                                                                                                                                            name="Type"
+                                                                                                                                            type="xsd:string"/>
+                                                                                                                                </xsd:complexType>
+                                                                                                                            </xsd:element>
+                                                                                                                        </xsd:sequence>
+                                                                                                                    </xsd:complexType>
+                                                                                                                </xsd:element>
+                                                                                                            </xsd:sequence>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="ID"
+                                                                                                                    type="xsd:string"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="Name"
+                                                                                                                    type="xsd:string"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="IsLock"
+                                                                                                                    type="xsd:integer"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="DoRemovePrivateInfo"
+                                                                                                                    type="xsd:integer"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="Encoding"
+                                                                                                                    type="xsd:string"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="ContentType"
+                                                                                                                    type="xsd:string"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="EventPacket"
+                                                                                                                    type="xsd:string"/>
+                                                                                                        </xsd:complexType>
+                                                                                                    </xsd:element>
+                                                                                                </xsd:sequence>
+                                                                                            </xsd:complexType>
+                                                                                        </xsd:element>
+                                                                                    </xsd:sequence>
+                                                                                    <xsd:attribute name="Code"
+                                                                                                   type="xsd:string"/>
+                                                                                    <xsd:attribute name="Enabled"
+                                                                                                   type="xsd:integer"/>
+                                                                                    <xsd:attribute name="AutoFee"
+                                                                                                   type="xsd:integer"/>
+                                                                                </xsd:complexType>
+                                                                            </xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                                <xsd:element name="Contacts">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="Contact"
+                                                                                         maxOccurs="unbounded"
+                                                                                         minOccurs="0">
+                                                                                <xsd:complexType>
+                                                                                    <xsd:sequence>
+                                                                                        <xsd:element name="Address">
+                                                                                            <xsd:complexType>
+                                                                                                <xsd:choice>
+                                                                                                    <xsd:element
+                                                                                                            name="SMS"
+                                                                                                            minOccurs="0">
+                                                                                                        <xsd:complexType>
+                                                                                                            <xsd:sequence>
+                                                                                                                <xsd:element
+                                                                                                                        name="Provider"
+                                                                                                                        type="xsd:string"/>
+                                                                                                                <xsd:element
+                                                                                                                        name="PhoneNumber"
+                                                                                                                        type="xsd:integer"/>
+                                                                                                            </xsd:sequence>
+                                                                                                        </xsd:complexType>
+                                                                                                    </xsd:element>
+                                                                                                    <xsd:element
+                                                                                                            name="Smtp"
+                                                                                                            minOccurs="0"
+                                                                                                            maxOccurs="1">
+                                                                                                        <xsd:complexType>
+                                                                                                            <xsd:sequence>
+                                                                                                                <xsd:element
+                                                                                                                        name="Mailto"
+                                                                                                                        type="xsd:string"/>
+                                                                                                            </xsd:sequence>
+                                                                                                        </xsd:complexType>
+                                                                                                    </xsd:element>
+                                                                                                </xsd:choice>
+                                                                                            </xsd:complexType>
+                                                                                        </xsd:element>
+                                                                                    </xsd:sequence>
+                                                                                    <xsd:attribute name="ID"
+                                                                                                   type="xsd:string"/>
+                                                                                    <xsd:attribute name="Name"
+                                                                                                   type="xsd:string"/>
+                                                                                    <xsd:attribute name="Channel"
+                                                                                                   type="xsd:string"/>
+                                                                                    <xsd:attribute name="IsEnable"
+                                                                                                   type="xsd:integer"/>
+                                                                                </xsd:complexType>
+                                                                            </xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                                <xsd:element name="DeliveredSchemas">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="DeliveredSchema"
+                                                                                         maxOccurs="unbounded"
+                                                                                         minOccurs="0">
+                                                                                <xsd:complexType>
+                                                                                    <xsd:sequence>
+                                                                                        <xsd:element name="Scheduling">
+                                                                                            <xsd:complexType>
+                                                                                                <xsd:sequence>
+                                                                                                    <xsd:element
+                                                                                                            name="Interval"
+                                                                                                            minOccurs="0"
+                                                                                                            maxOccurs="unbounded">
+                                                                                                        <xsd:complexType>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="Type"
+                                                                                                                    type="xsd:string"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="BegPoint"
+                                                                                                                    type="xsd:integer"/>
+                                                                                                            <xsd:attribute
+                                                                                                                    name="EndPoint"
+                                                                                                                    type="xsd:integer"/>
+                                                                                                        </xsd:complexType>
+                                                                                                    </xsd:element>
+                                                                                                </xsd:sequence>
+                                                                                            </xsd:complexType>
+                                                                                        </xsd:element>
+                                                                                    </xsd:sequence>
+                                                                                    <xsd:attribute name="ID"
+                                                                                                   type="xsd:string"/>
+                                                                                    <xsd:attribute name="Name"
+                                                                                                   type="xsd:string"/>
+                                                                                    <xsd:attribute name="GMT"
+                                                                                                   type="xsd:integer"/>
+                                                                                    <xsd:attribute name="IsDefault"
+                                                                                                   type="xsd:integer"/>
+                                                                                </xsd:complexType>
+                                                                            </xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                            <xsd:attribute name="ID" type="xsd:string"/>
+                                                            <xsd:attribute name="LastName" type="xsd:string"/>
+                                                            <xsd:attribute name="FirstName"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="MiddleName"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="BirthDate"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="Account" type="xsd:integer"/>
+                                                            <xsd:attribute name="AccountSystemID"
+                                                                           type="xsd:string"/>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="Exceptions" minOccurs="0"
+                                                                 maxOccurs="1">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="HermesException">
+                                                                    <xsd:complexType>
+                                                                        <xsd:attribute name="Description"
+                                                                                       type="xsd:string"/>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="CorrelationID" type="xsd:string"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="BillingManager">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="CalculateCommission">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Request" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="InitiatorProcess">
+                                                        <xsd:complexType>
+                                                            <xsd:attribute name="SystemID" type="xsd:string"
+                                                                           use="optional"/>
+                                                            <xsd:attribute name="ProcessID"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="UserName" type="xsd:string"/>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="Client">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="NotificationPackets">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="NotificationPacket"
+                                                                                         maxOccurs="unbounded">
+                                                                                <xsd:complexType>
+                                                                                    <xsd:attribute name="Code"
+                                                                                                   type="xsd:string"/>
+                                                                                </xsd:complexType>
+                                                                            </xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                            <xsd:attribute name="GlobalID" type="xsd:string"/>
+                                                            <xsd:attribute name="SystemID" type="xsd:string"/>
+                                                            <xsd:attribute name="Type" type="xsd:string"/>
+                                                            <xsd:attribute name="Number" type="xsd:string"/>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="Response" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="NotificationPackets" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="NotificationPacket"
+                                                                             maxOccurs="unbounded"
+                                                                             minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:attribute name="Code"
+                                                                                       type="xsd:string"/>
+                                                                        <xsd:attribute name="AutoFeeDate"
+                                                                                       type="xsd:string"/>
+                                                                        <xsd:attribute name="EnableCost"
+                                                                                       type="xsd:integer"/>
+                                                                        <xsd:attribute name="ProlongCost"
+                                                                                       type="xsd:integer"/>
+                                                                        <xsd:attribute name="EnableKBO"
+                                                                                       type="xsd:string"/>
+                                                                        <xsd:attribute name="ProlongKBO"
+                                                                                       type="xsd:string"/>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="Exceptions" minOccurs="0">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="HermesException">
+                                                                    <xsd:complexType>
+                                                                        <xsd:attribute name="Description"
+                                                                                       type="xsd:string"/>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="CorrelationID" type="xsd:string"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

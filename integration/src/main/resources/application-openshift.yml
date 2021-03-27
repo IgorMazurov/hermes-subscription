@@ -1,0 +1,16 @@
+integration:
+  hermes:
+    soap-connection-timeout: ${SOAP_CONNECTION_TIMEOUT}
+    soap-read-timeout: ${SOAP_READ_TIMEOUT}
+    hermes-notification-url: ${HERMES_NOTIFICATION_ENDPOINT_URL}
+    mock-enabled: ${SERVICE_MOCK_ENABLED}
+
+msa:
+  fluentd:
+    enabled: true
+    host: ${FLUENTD_HOST}
+    port: ${FLUENTD_PORT}
+
+logging:
+  level:
+    ru.vtb.msa: ${APP_LOGGING_LEVEL}
